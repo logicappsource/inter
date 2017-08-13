@@ -8,3 +8,41 @@
     }
   }
 }
+
+
+
+
+
+
+
+// #search {
+// 		@extend .flex-container;
+// 		background-color: #ffffff;
+// 		height: 42px;
+// 		/* border: 1.5px solid $white; */
+// 		border-radius: 30px;
+// 		margin-left: $margin-n;
+// 		box-shadow: $shadow-inset;	
+
+// 		input {
+// 			background-color: $white;
+// 			border: none;
+// 			outline: 0;
+// 			width: 300px;
+// 			font-size: 1em;
+// 			margin-left: $margin-s;
+// 		}
+// 		@include inputcolor($gray);
+
+// 		button {
+// 			background-color: $white;
+// 			border: none;
+// 			outline: 0;
+// 			margin-right: $margin-t;
+// 		}
+
+// 		button i {
+// 			color: $gray;
+// 			font-size: 1.5em;
+// 		}
+// 	}

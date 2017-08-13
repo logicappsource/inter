@@ -1,3 +1,10 @@
-.footer {
-
+footer {
+      @extend .flex-section;
+background-color: #16171b;
+color:white;
+  height: 350px !important;
+  bottom: 0;
+  left:0;
+  right:0;
+  position: relative;
 }

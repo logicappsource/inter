@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300i|Pacifico');
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+/* COLORS */
+$white: #fff;
+
+/* STYLE SYSTEM */
+$golden-r: 100vw / 3; /* golden-ratio */
+$margin-g: 60px; /* giant margin */
+$margin-b: 45px; /* big margin */
+$margin-n: 30px; /* normal margin */
+$margin-s: 15px; /* small margin */
+$margin-t: 7px;  /* tiny margin */
+$nav-height: 125px; /* nav height - set height */
+$grid-sys: 1080px; /* based after the classic 960 grid system */
+$btn-dim: 60px; /* dimensions of btns */
+
+$font-display: 'Raleway';
+$font-paragraph: 'Open Sans';
+
+
+$shadow: 2px 3px 5px 0px blue;
+$shadow-inset: 1px 2px 3px 0px blue inset;
+
+
+
+
+
+//Dropdown menu 
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    top: 0px;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
