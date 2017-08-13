@@ -21,17 +21,34 @@
     
 }
 
-#searchh1 {
-    color:white;
-}
+#search {
+    @extend .flex-container;
+    background-color: $white;
+    height: 42px;
+    /* border: 1.5px solid $white; */
+    border-radius: 30px;
+    margin-left: $margin-n;
+    box-shadow: $shadow-inset;	
 
+    input {
+        background-color: $white;
+        border: none;
+        outline: 0;
+        width: 300px;
+        font-size: 1em;
+        margin-left: $margin-s;
+    }
+    @include inputcolor($gray);
 
-#searchfront{
-    width:750px;
-    border-radius: 60px;
-}
+    button {
+        background-color: $white;
+        border: none;
+        outline: 0;
+        margin-right: $margin-t;
+    }
 
-
-.searchbox{
-    margin: 100px auto; 
+    button i {
+        color: $gray;
+        font-size: 1.5em;
+    }
 }

@@ -108,6 +108,208 @@
   //Functions 
   /**********************************************************************/
   
+
+
+    //New Updated Search feature 
+
+    $('#searchEvents').on('click', function () {
+      //get input value of #search-engine
+      var inputSearchField =  $('#searchfront').val();
+      var aInput = inputSearchField.split(" ");
+      var jResults = [];
+
+      console.log(aInput);
+      //Stop 
+
+      //get instance of localStorage   //MIssing put figure cap into localstorage 
+      var jTemp = JSON.parse(localStorage.events);
+      
+      //check each aInput for a match
+      aInput.forEach(function(a) {
+
+        var temp = a;
+
+        jTemp.forEach(function(j){
+
+          var name = j.name;
+          var topic = j.topic;
+          var level = j.level;
+          var org = j.speaker_organization;
+          var location = j.location;
+
+          compare(temp, name, j, jResults);
+          //compare(temp, topic, j, jResults); //this is an array
+          compare(temp, level, j, jResults);
+          compare(temp, org, j, jResults);
+          //compare(temp, location, j, jResults); //this is a JSON object
+
+        });
+      });
+
+      //remove duplicates
+      console.log(jResults);
+
+      var jResultsFinal = jResults.filter(function(elem, index, self) {
+      return index == self.indexOf(elem);
+      });
+
+      console.log(jResultsFinal);
+
+      //clear default items from 
+      $("#event-listing").empty();
+
+      var baseNumber = jResultsFinal.length / 3;
+      console.log("The base number is: " + baseNumber);
+
+      //append to DOM
+      jResultsFinal.forEach(function(j) {
+        var aTopics = j.topic;
+
+        console.log(jResultsFinal.length);
+        console.log(j.name);
+
+        //get an instance of an event and append it to the DOM..
+        $("#event-listing").append('\
+            <div class="event-thirds" data-event-id="' + j.id + '">\
+              <div>\
+                <h1>' + j.name + '</h1>\
+                <h2>' + aTopics + '</h2>\
+                <h5>' + j.date.day + '-' + j.date.month + '-' + j.date.year + '</h5>\
+              </div>\
+            </div>\
+          ');
+
+
+      });
+  }); //End new search feature 
+
+
+
+  if (localStorage.events == null) {
+    //import data from data/events.json
+    //input into localStorage.events
+    //json file will always have data, which is why this method will always work!
+    console.log("localStorage.events is empty");
+    $.getJSON("assets/data/events.json").done( function(jData) {
+      console.log(jData);
+      //put the jData objects into localStorage
+      var sData = JSON.stringify(jData);
+      localStorage.events = sData;
+      console.log("localStorage.events successfully populated");
+
+      var sEvents = localStorage.events;
+      var jEvents = JSON.parse(sEvents);
+
+      jEvents.forEach(function(j) {
+        if (jEvents.indexOf(j) <= 9) {
+          //start
+          console.log("works");
+
+          var aTopics = j.topic;
+
+          $("#event-listing").append('\
+              <div class="event-thirds" data-event-id="' + j.id + '">\
+                <div>\
+                  <h1>' + j.name + '</h1>\
+                  <h2>' + aTopics + '</h2>\
+                  <h5>' + j.date.day + '-' + j.date.month + '-' + j.date.year + '</h5>\
+                </div>\
+              </div>\
+          ');
+          //end
+        }
+      });
+
+      initPopData(); //populate data in event-management table
+    });
+  } else if (localStorage.events) {
+    //load everything from localstorage and populate the div with data..
+    console.log("localStorage.events has data");
+    
+    var sEvents = localStorage.events;
+    var jEvents = JSON.parse(sEvents);
+
+    jEvents.forEach(function(j) {
+      if (jEvents.indexOf(j) <= 9) {
+        //start
+        console.log("works");
+
+        var aTopics = j.topic;
+
+        $("#event-listing").append('\
+            <div class="event-thirds" data-event-id="' + j.id + '">\
+              <div>\
+                <h1>' + j.name + '</h1>\
+                <h2>' + aTopics + '</h2>\
+                <h5>' + j.date.day + '-' + j.date.month + '-' + j.date.year + '</h5>\
+              </div>\
+            </div>\
+        ');
+        //end
+      }
+    });
+
+    initPopData();
+  }
+
+
+  
+
+  function initPopData() {
+    //since localstorage will always have values,
+    //append all of localstorage's content to the corresponding table
+    var jEvents = JSON.parse(localStorage.events);
+    jEvents.forEach( function(j) {
+      $("#event-listing tbody").append('<tr data-event-id="' + j.id + '">\
+										<td>' + j.name + '</td>\
+										<td>' + j.topic + '</td>\
+										<td>' + j.speaker + '</td>\
+										<td>' + j.date.day + ' ' + j.date.month + ' ' + j.date.year + '</td>\
+										<td>' + j.time_24h.hour + ':' + j.time_24h.minute + '</td>\
+										<td>\
+											<i class="fa fa-pencil" id="edit-event-icon" aria-hidden="true"></i>\
+											<i class="fa fa-trash" id="delete-event-icon" aria-hidden="true"></i>\
+										</td>\
+									</tr>\
+			');
+    });
+  }
+
+
+
+
+
+
+  function compare(inputVal, dataVal, jObj, jData) {
+    var inputValLower = inputVal.toLowerCase();
+    var dataValLower = dataVal.toLowerCase();
+  
+    console.log("The input value is: " + inputValLower);
+    console.log("The JSON data to compare is: " + dataValLower);
+  
+    var bool = dataValLower.includes(inputValLower);
+    console.log("The bool = " + bool);
+  
+      if (bool == true) {
+        console.log("Match made");
+        jData.push(jObj);
+      } else {
+        console.log("False");
+      }
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
   
   
   //on load
@@ -133,12 +335,14 @@
     input = document.getElementById('searchfront');
     filter = input.value.toUpperCase(); 
     figclass = document.getElementById('effect-milo'); 
-    figcap = figclass.getElementsByTagName('figcaption');
+    figcap = figclass.getElementsByTagName('location');
+
     console.log(figcap);
     //Loop through all fig captions and hide/show
     for(i = 0; i <  figcap.length; i++) {
       location = figcap[i].getElementById('span')[0];
       console.log(location);
+      console.log(figcap[i] + figcap);
   
       if(location) {
         if (location.innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -263,7 +467,9 @@
        $('.brand h1').text('Logged in as Admin ' + '# ' + credentials.username);
          
   
-        hideWindowsAndShowOneWindow('wdw-register-member');
+      // hideWindowsAndShowOneWindow('wdw-register-member');
+      
+        hideWindowsAndShowOneWindow('wdw-index');
   
         console.log(credentialsMember.username + credentialsMember.password);
         
@@ -371,8 +577,26 @@
     console.log('Trashed clicked', aEvents, aEvents[i], aEvents.length);
     aEvents.splice(1,1);
   });
+
+
+  //Manage Events 
+  $('#manage-events').on('click', function() {
+    hideWindowsAndShowOneWindow('wdw-manage-events');
+    console.log('manage events clicked ');
+  });
   
-  
+  //Manage users 
+  $('#manage-users').on('click', function() {
+    hideWindowsAndShowOneWindow('wdw-manage-users');
+    console.log('manage users clicked ');
+  });
+
+  // Manage members 
+  $('#manage-members').on('click', function() {
+    hideWindowsAndShowOneWindow('wdw-manage-members'); 
+    console.log('manage-members clicked');
+  });
+
   //Trash Delete search events
   $('.fa-fa-trash').click(function() {
     $(this).parent().hide();

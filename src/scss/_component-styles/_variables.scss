@@ -16,6 +16,15 @@ $nav-height: 125px; /* nav height - set height */
 $grid-sys: 1080px; /* based after the classic 960 grid system */
 $btn-dim: 60px; /* dimensions of btns */
 
+/* COLORS */
+$white: #fff;
+$purple: #8C3474;
+$teal: #4E9E93;
+$green: #86B954;
+$gray: #282526;
+$dark-gray: darken($gray, 25);
+$light-gray: lighten($gray, 50);
+
 $font-display: 'Raleway';
 $font-paragraph: 'Open Sans';
 
@@ -76,3 +85,4 @@ $shadow-inset: 1px 2px 3px 0px blue inset;
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
 }
+

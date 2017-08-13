@@ -24,23 +24,28 @@
         <div>	
           <a class="brand" href="#"><h1 id="tech">#Tekhus</h1></a>
         </div>
-
+        <div class="searchBox">
+            <div class="container-1">
+                <input id="searchfront" type="search" id="search"  keyup="searchEventsHome()" placeholder="Search..." />
+              <button id="searchEvents">  Search</button>
+              </div>
+          </div>
         <nav>
-
+           
           <ul class="snip1211">
             
             <li>
               <div class="dropdown">
               <button class="dropbtn">MANAGE</button>                
                 <div class="dropdown-content">
-                    <a href="#">Events</a>
-                    <a href="#">Users</a>  
-                    <a href="#">Manage Members</a> 
+                    <a id="manage-events" href="#">Events</a>
+                    <a id="manage-users"href="#">Users</a>  
+                    <a id="manage-members" href="#">Manage Members</a> 
                   </div> 
                 </div> 
             </li>
               
-            <li id="linkHome"><a href="#">Home</a></li>
+           
             <li id="linkCalendar"><a href="#">Calendar</a></li>
             <li id="linkEvents"><a href="#">Events</a></li>
           
@@ -71,7 +76,7 @@
             <!-- wdw  Home --> 
             <div class="wdw" id="wdw-home"> 
             
-                    <!-- <div id="fold"> -->
+                     <div id="fold"> </div>
                       <!-- <div id="foldbackground">
                         <h1 id="searchh1">Search Events   </h1>
 
@@ -182,8 +187,8 @@
                </div>    
         </div>
 
-             <!-- Events Listings 
-            <div id="event-listing">
+             <!-- Events Listings -->
+            <div id="event-listing"> </div>
                         <!--
                         <div class="event-halves"></div>
                         <div class="event-halves"></div>
@@ -266,8 +271,6 @@ End home-->
                               <h3>New Event</h3>
                             </figcaption>
                           </figure>
-
-                        
                           <figure class="snip0048 blue" id="btnallevents">
                             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/pr-sample3.jpg" alt="sample3"/>
                             <figcaption>
