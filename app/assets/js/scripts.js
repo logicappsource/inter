@@ -10,7 +10,7 @@
   
     'use strict';
   
-  console.log('script.js inititalized');
+
   
       //Hide/Show - Wdw 
       function hideWindowsAndShowOneWindow(sWindowId) {
@@ -295,23 +295,11 @@
       }
   }
   
-
-
-
-
-
-
-
-
-
-
-
-
-  
   
   //on load
   $(document).ready(function() {
      hideWindowsAndShowOneWindow('wdw-home'); 
+     $('#wdw-event-listing').fadeIn(500);
   });
   
   
