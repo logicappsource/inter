@@ -16,7 +16,8 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/sweetalert2/5.3.5/sweetalert2.min.css">
 
-
+    <link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css">
+    
   </head>
   <body>
 
@@ -389,10 +390,22 @@ End home-->
                                             
                 </ul>
                              
-                                
+                <!-- <div id="map"></div>
+                 -->
       </footer>
 
-
+      <script>
+          function initMap() {
+            // Create a map object and specify the DOM element for display.
+            var map = new google.maps.Map(document.getElementById('map'), {
+              center: {lat: -34.397, lng: 150.644},
+              scrollwheel: false,
+              zoom: 8
+            });
+          }
+    
+        </script>
+    
 
    
    
@@ -401,6 +414,11 @@ End home-->
     <script src="https://use.fontawesome.com/20600c73f5.js"></script>
     
     <script src="https://cdn.jsdelivr.net/sweetalert2/5.3.5/sweetalert2.min.js"></script>
+
+     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-TOg3bXdlTGUC9e_scAwk7c-J-vor2Rk "></script>
+
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+    
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
         (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

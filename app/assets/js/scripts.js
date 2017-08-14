@@ -511,7 +511,6 @@
   
   //Nav - Calendar 
   $('#linkCalendar').on('click', function() {
-  
     hideWindowsAndShowOneWindow('wdw-calendar');
     console.log('Nav - Calendar clicked');
   });
@@ -587,6 +586,89 @@ $('#linkpartnere').on('click', function() {
   //   // $(this).parent('tr').remove(); //completely destroy the tr (remove from DOM)
   //   $(this).parent('tr').hide(); //just hide it from the user
   // });
+
+
+
+$('#figure1').on('click', function() {
+  swal({
+    title: 'Spark Summit ',
+    html:
+      '<div style="width: 100%"><iframe width="100%" height="600" src="https://www.mapsdirections.info/en/custom-google-maps/map.php?width=100%&height=600&hl=ru&q=San%20fransico+(Spark%20SUmmit%20)&ie=UTF8&t=&z=13&iwloc=A&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/custom-google-maps/">Create a custom Google Map</a> by <a href="https://www.mapsdirections.info/en/">UK Maps</a></iframe></div><br />',
+    showCloseButton: true,
+    showCancelButton: true,
+    confirmButtonText:
+      '<i class="fa fa-thumbs-up"></i> Great!',
+    cancelButtonText:
+      '<i class="fa fa-thumbs-down"></i>'
+  })  
+});
+
+
+
+$('#figure4').on('click', function() {
+  swal({
+    title: 'Web Summit ',
+    html:
+            '<div style="width: 100%"><iframe width="100%" height="600" src="https://www.mapsdirections.info/en/custom-google-maps/map.php?width=100%&height=600&hl=ru&q=lisbon%20portugal+(Web%20Summit%20)&ie=UTF8&t=&z=14&iwloc=A&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/custom-google-maps/">Create a custom Google Map</a> by <a href="https://www.mapsdirections.info/en/">UK Maps</a></iframe></div><br />',
+    showCloseButton: true,
+    showCancelButton: true,
+    confirmButtonText:
+      '<i class="fa fa-thumbs-up"></i> Great!',
+    cancelButtonText:
+      '<i class="fa fa-thumbs-down"></i>'
+  })  
+});
+
+
+$('#figure2').on('click', function() {
+  swal({
+    title: 'Big Data ',
+    html:'<div style="width: 100%"><iframe width="100%" height="600" src="https://www.mapsdirections.info/en/custom-google-maps/map.php?width=100%&height=600&hl=ru&q=Toronto%20canada+(Web%20Summit%20)&ie=UTF8&t=&z=14&iwloc=A&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/custom-google-maps/">Create a custom Google Map</a> by <a href="https://www.mapsdirections.info/en/">UK Maps</a></iframe></div><br />',
+    showCloseButton: true,
+    showCancelButton: true,
+    confirmButtonText:
+      '<i class="fa fa-thumbs-up"></i> Great!',
+    cancelButtonText:
+      '<i class="fa fa-thumbs-down"></i>'
+  })  
+});
+
+
+
+  //  // When the window has finished loading create our google map below
+  //  google.maps.event.addDomListener(window, 'load', init);
+   
+  //      function init() {
+  //          // Basic options for a simple Google Map
+  //          // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
+  //          var mapOptions = {
+  //              // How zoomed in you want the map to start at (always required)
+  //              zoom: 11,
+
+  //              // The latitude and longitude to center the map (always required)
+  //              center: new google.maps.LatLng(40.6700, -73.9400), // New York
+
+  //              // How you would like to style the map. 
+  //              // This is where you would paste any style found on Snazzy Maps.
+  //              styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+  //          };
+
+  //          // Get the HTML DOM element that will contain your map 
+  //          // We are using a div with id="map" seen below in the <body>
+  //          var mapElement = document.getElementById('map');
+
+  //          // Create the Google Map using our element and options defined above
+  //          var map = new google.maps.Map(mapElement, mapOptions);
+
+  //          // Let's also add a marker while we're at it
+  //          var marker = new google.maps.Marker({
+  //              position: new google.maps.LatLng(40.6700, -73.9400),
+  //              map: map,
+  //              title: 'Snazzy!'
+  //          });
+  //      }
+
+
 
   
   })(jQuery, window, document);

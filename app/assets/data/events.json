@@ -10,7 +10,7 @@
 		"time_24h": { "hour" : "15", "minute" : "00" },
 		"duration": { "hour" : "4", "minute" : "00" },
 		"location" : { "street-add" : "Lygten 37", "city" : "Copenhagen", "zip" : "2200", "country" : "Denmark" },
-		"img_url": "#",
+		"img_url": "https://i.amz.mshcdn.com/FfQvyKZjzbNxgqjv79v0HreTDBs=/950x534/filters:quality(90)/2014%2F09%2F26%2Fba%2Ftechevent.5835e.jpg",
 		"info": "Learn how to develop a simple game with the Unity game engine.",
 		"past": "false"
 	},
