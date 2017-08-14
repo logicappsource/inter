@@ -2,8 +2,6 @@
   
     'use strict';
   
-
-  
       //Hide/Show - Wdw 
       function hideWindowsAndShowOneWindow(sWindowId) {
         $('.wdw').hide(); //fadeout 500 
