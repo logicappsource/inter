@@ -442,7 +442,7 @@
        
       // localStorage.loggedInUser = JSON.stringify(credentials);
        isLoggedIn();
-       $('.brand h1').text('Welcome ' + credentials.username);
+       $('.brand h1').text('HI ' + credentials.username);
          
   
       // hideWindowsAndShowOneWindow('wdw-register-member');

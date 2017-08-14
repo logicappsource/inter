@@ -1449,6 +1449,9 @@ figure.effect-milo:hover p {
   to {
     transform: rotate(360deg); } }
 
+#whitecolor {
+  color: white; }
+
 /* COLORS */
 /* STYLE SYSTEM */
 /* golden-ratio */
@@ -1650,7 +1653,8 @@ figure.effect-milo:hover p {
     outline: 0;
     width: 300px;
     font-size: 1em;
-    margin-left: 15px; }
+    margin-left: 15px;
+    height: 305px !important; }
   #searchfront button {
     background-color: #fff;
     border: none;
