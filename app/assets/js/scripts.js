@@ -16,8 +16,7 @@
         $('#' + sWindowId).show(); // fade in 500 
       }
   
-  
-  
+
       //Storing events 
       var aEvents = []; 
   
@@ -64,7 +63,6 @@
       var sPostLocation = $('#inputpostlocation').val(); 
       var sLink = 'link';
   
-      //console.log(sImageUrl + sposttitel + sPostDesc + sPostLocation);
       //Before .calendar-back 
       $('#lblEvents').append(
         '<tr>' + 
@@ -190,7 +188,7 @@
     console.log('localStorage.events is empty');
     $.getJSON('assets/data/events.json').done( function(jData) {
       console.log(jData);
-      //put the jData objects into localStorage
+
       var sData = JSON.stringify(jData);
       localStorage.events = sData;
       console.log('localStorage.events successfully populated');
@@ -214,7 +212,6 @@
                 </div>\
               </div>\
           ');
-          //end
         }
       });
 
@@ -250,7 +247,6 @@
     initPopData();
   }
 
-
   
 
   function initPopData() {
@@ -278,19 +274,14 @@
   function compare(inputVal, dataVal, jObj, jData) {
     var inputValLower = inputVal.toLowerCase();
     var dataValLower = dataVal.toLowerCase();
-  
-    console.log('The input value is: ' + inputValLower);
-    console.log('The JSON data to compare is: ' + dataValLower);
-  
     var bool = dataValLower.includes(inputValLower);
-    console.log('The bool = ' + bool);
-  
-      if (bool == true) {
-        console.log('Match made');
-        jData.push(jObj);
-      } else {
-        console.log('False');
-      }
+
+        if (bool == true) {
+          console.log('Match made');
+          jData.push(jObj);
+        } else {
+          console.log('False');
+        }
   }
   
   
@@ -298,7 +289,6 @@
   $(document).ready(function() {
      hideWindowsAndShowOneWindow('wdw-home'); 
      $('#wdw-event-listing').fadeIn(500);
-    //  $('.dropdown').hide();
   });
   
   
@@ -310,8 +300,7 @@
      //}
   }
   
-  //func logout 
-  
+
   
   function searchEventsHome() {
     var input, filter, figclass , figcap ,location,i;
@@ -343,7 +332,6 @@
   
   $('#searchfront').keyup(function() {
     searchEventsHome();
-    console.log('searchign,');
   });
   
   //Serach Events Dynamicialy 
@@ -368,37 +356,49 @@
       } 
     }
   }
+
+ //Serach Partnere Dynamicialy 
+//  function myFunction() {
+//   // Declare variables 
+//   var input, filter, table, tr, td, i;
+//   input = document.getElementById("myInput");
+//   filter = input.value.toUpperCase();
+//   table = document.getElementById("myTable");
+//   tr = table.getElementsByTagName("tr");
+
+//   // Loop through all table rows, and hide those who don't match the search query
+//   for (i = 0; i < tr.length; i++) {
+//     td = tr[i].getElementsByTagName("td")[0];
+//     if (td) {
+//       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//         tr[i].style.display = "";
+//       } else {
+//         tr[i].style.display = "none";
+//       }
+//     } 
+//   }
+// }
+
   
   
-  //Search Through Table -> 
-  $('#myInput').keyup(function() {
-    searchEvents();
-  });
-  
-  
-  /*
-  function createPost() { //Takes object  Post 
-  /*
-    $('#wdw-all-events').empty(); 
-    var sPostTemplate = 
-    '<div class="grid_job"><figure class="effect-milo" id="figure1">\
-     <img class="featured-company__image" src="${Post.img}" alt=""><figcaption>\
-     <h2>${Post.title} <span> ${Post.location} </span>\
-     </h2><p>${desc}</p><a href="#">View more</a></figcaption></figure></div>\
-     ';
-  
-     $('#wd-all-events').append(sPostTemplate);
-  
+    //Search Through Table  Events-> 
+    $('#myInput').keyup(function() {
+      searchEvents();
+    });
     
-  }
-  */
+    // //Search Through Table Partnere -> 
+    // $('#myInput').keyup(function() {
+    //   myFunction();
+    // });
+
+  
   
   
   function getPost() {
     var sImageUrl = $('#inputpostimg').val();
     var sposttitel = $('#inputposttitel').val();
     var sPostDesc = $('#inputpostdesc').val();
-      var sPostLocation = $('#inputpostlocation').val(); 
+    var sPostLocation = $('#inputpostlocation').val(); 
   
     //console.log(sImageUrl + sposttitel + sPostDesc + sPostLocation);
     
@@ -411,14 +411,23 @@
   
     //Div append 
     console.log(Post);
-    
-  
     //Converts to objects  
+
+    swal({
+      title: 'Event Created!',
+      text: 'Dear Techie, Event has been succesfully scheduled',
+      imageUrl: 'https://pixabay.com/get/e837b50a2ff5053ed1534705fb0938c9bd22ffd41cb1134695f9c07da2/computer-1245714_1920.jpg',
+      imageWidth: 400,
+      imageHeight: 200,
+      animation: false
+    })
+
   }
   
   
   $(document).ready(function() {
     loginAdmin();
+    
   });
   
   function loginAdmin() {
@@ -440,25 +449,20 @@
     var credentialsMember = JSON.parse(localStorage.getItem('credentialsMember')); 
   
     var usernameInput = $('#inputusername').val();
-    var password  = $('#inputpassword').val();
-    //console.log(usernameInput + password);
   
     if(credentials.username === usernameInput && credentials.password === password || credentialsMember.username === usernameInput && credentialsMember.password === password ) {
-       console.log('Welcome Mr.   ' + credentials.username);
-       
-      // localStorage.loggedInUser = JSON.stringify(credentials);
+      //  console.log('Welcome Mr.   ' + credentials.username);
+    
        isLoggedIn();
        $('.brand h1').text('HI ' + credentials.username);
-         
-  
-      // hideWindowsAndShowOneWindow('wdw-register-member');
-      
+
+        swal(
+          'Welcome!',
+          "#Tekhus <3 Tech ",
+          'success'
+        )
+    
         hideWindowsAndShowOneWindow('wdw-index');
-  
-        console.log(credentialsMember.username + credentialsMember.password);
-     
-        
-        // $('.brand h1').text('Logged in as Member' + ' # ' + credentialsMember.username);
     } else {
       console.log('failed login');
     }
@@ -478,8 +482,6 @@
     var inputlocation = $('#inputlocationreg').val();
     var inputusername = $('#inputusernamereg').val();
     var inputpass = $('#inputpasswordreg').val();
-  
-    //console.log('New Registerd user =  ' + inputusername);
   
     var userCreds = {
       'fname' : inputfname,
@@ -538,6 +540,11 @@
   
   //Nav - Calendar 
   $('#linkCalendar').on('click', function() {
+    swal(
+      'Oops...',
+      'Something went wrong!',
+      'error'
+    )
     hideWindowsAndShowOneWindow('wdw-calendar');
     console.log('Nav - Calendar clicked');
   });
@@ -588,6 +595,13 @@
     hideWindowsAndShowOneWindow('wdw-index'); 
     console.log('manage-members clicked');
   });
+
+
+$('#linkpartnere').on('click', function() {
+  hideWindowsAndShowOneWindow('wdw-partnere'); 
+  console.log('partner link clicked ');
+});
+
 
   //Trash Delete search events
   $('.fa-fa-trash').click(function() {

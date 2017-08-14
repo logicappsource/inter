@@ -677,7 +677,7 @@ a {
 ul li {
   display: inline-block; }
 
-.flex-container, .flex-section, footer, #nav-bar, .box, #fold, #wdw-index, #event-listing, #loginform, #registerform, #wdw-post-event, .flex-child, .pill-style, .soft-edges, .btn-style, #searchfront {
+.flex-container, .flex-section, footer, #nav-bar, .box, #fold, #wdw-index, #event-listing, #loginform, #registerform, #wdw-post-event, #wdw-partnere, .flex-child, .pill-style, .soft-edges, .btn-style, #searchfront {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -685,7 +685,7 @@ ul li {
   -ms-flex-align: center;
       align-items: center; }
 
-.flex-section, footer, #nav-bar, .box, #fold, #wdw-index, #event-listing, #loginform, #registerform, #wdw-post-event {
+.flex-section, footer, #nav-bar, .box, #fold, #wdw-index, #event-listing, #loginform, #registerform, #wdw-post-event, #wdw-partnere {
   width: 100%;
   height: calc(100vh - 125px); }
 
