@@ -371,7 +371,6 @@
     var sPostDesc = $('#inputpostdesc').val();
     var sPostLocation = $('#inputpostlocation').val(); 
   
-    //console.log(sImageUrl + sposttitel + sPostDesc + sPostLocation);
     
     var Post = {
       'postimageurl':sImageUrl,
@@ -398,7 +397,6 @@
   
   $(document).ready(function() {
     loginAdmin();
-    
   });
   
   function loginAdmin() {
@@ -409,6 +407,33 @@
     localStorage.setItem('credentials', JSON.stringify(userCredsAdmin)); 		 
   }
   
+
+  function addMembers() {
+    swal({
+      title: "An input!",
+      text: "Write something interesting:",
+      type: "input",
+      showCancelButton: true,
+      closeOnConfirm: false,
+      animation: "slide-from-top",
+      inputPlaceholder: "Write something",
+      inputPlaceholder: "Write something",
+      inputPlaceholder: "Write something",
+    },
+    function(inputValue){
+      if (inputValue === false) return false;
+      
+      if (inputValue === "") {
+        swal.showInputError("You need to write something!");
+        return false
+      }
+      
+      swal("Nice!", "You wrote: " + inputValue, "success");
+    });
+  }
+
+
+
   
   
    /**********************************************************************/
@@ -446,31 +471,26 @@
     //Register user on page 
     /**********************************************************************/
   $('#memberbtn').on('click', function() {
-  
-    var inputfname = $('#inputfnamereg').val();
-    var inputlname = $('#inputlnamereg').val();
-    var inputemail = $('#inputemailreg').val();
-    var inputlocation = $('#inputlocationreg').val();
-    var inputusername = $('#inputusernamereg').val();
-    var inputpass = $('#inputpasswordreg').val();
-  
-    var userCreds = {
-      'fname' : inputfname,
-      'lname': inputlname,
-      'email':inputemail,
-      'location':inputlocation,
-      'usernam': inputusername,
-      'password': inputpass,
-      
-    };
+          var inputfname = $('#inputfnamereg').val();
+          var inputlname = $('#inputlnamereg').val();
+          var inputemail = $('#inputemailreg').val();
+          var inputlocation = $('#inputlocationreg').val();
+          var inputusername = $('#inputusernamereg').val();
+          var inputpass = $('#inputpasswordreg').val();
+        
+          var userCreds = {
+            'fname' : inputfname,
+            'lname': inputlname,
+            'email': inputemail,
+            'location':inputlocation,
+            'usernam': inputusername,
+            'password': inputpass,
+      };
   
     localStorage.setItem('credentialsMember', JSON.stringify(userCreds)); 
-  
     console.log('Local Storage store', userCreds);
-    hideWindowsAndShowOneWindow('wdw-login');
   
   }); 
-  
   
   
    /**********************************************************************/
@@ -501,13 +521,7 @@
     hideWindowsAndShowOneWindow('wdw-events');
     console.log('Nav - Link Event');
   });
-  
-  
-  //Nav - News 
-  $('#linkNews').on('click', function() {
-    hideWindowsAndShowOneWindow('wdw-news');
-    console.log('Nav - News clicked');
-  });
+
   
   //Nav - Calendar 
   $('#linkCalendar').on('click', function() {
@@ -544,16 +558,16 @@
 
 
   //Manage Events 
-  $('#manage-events').on('click', function() {
-    hideWindowsAndShowOneWindow('wdw-manage-events');
-    console.log('manage events clicked ');
-  });
+  // $('#manage-events').on('click', function() {
+  //   hideWindowsAndShowOneWindow('wdw-manage-events');
+  //   console.log('manage events clicked ');
+  // });
   
-  //Manage users 
-  $('#manage-users').on('click', function() {
-    hideWindowsAndShowOneWindow('wdw-manage-users');
-    console.log('manage users clicked ');
-  });
+  // //Manage users 
+  // $('#manage-users').on('click', function() {
+  //   hideWindowsAndShowOneWindow('wdw-manage-users');
+  //   console.log('manage users clicked ');
+  // });
 
   // Manage members 
   $('#registermember').on('click', function() {
@@ -563,18 +577,28 @@
   });
 
 
-$('#linkpartnere').on('click', function() {
-  hideWindowsAndShowOneWindow('wdw-partnere'); 
-  console.log('partner link clicked ');
-});
-
-
-  //Trash Delete search events
-  $('.fa-fa-trash').click(function() {
-    $(this).parent().hide();
-    console.log('Trash delete clicked ');
+  $('#linkpartnere').on('click', function() {
+    hideWindowsAndShowOneWindow('wdw-partnere'); 
+    console.log('partner link clicked ');
   });
-  
+
+
+  $('#addmember').on('click', function() {
+    console.log('added member');
+    hideWindowsAndShowOneWindow('wdw-register-member');
+    addMembers(); 
+  });
+
+    //Trash Delete search events
+    $('.fa-fa-trash').click(function() {
+      $(this).parent().hide();
+      console.log('Trash delete clicked');
+    });
+    
+    function hide() {
+      $(this).parent.hide();
+    }
+
   // //Delete hide event 
   // $('.d1').on('click', function() {
   //   $(this).parent.hide();
@@ -634,39 +658,6 @@ $('#figure2').on('click', function() {
 });
 
 
-
-  //  // When the window has finished loading create our google map below
-  //  google.maps.event.addDomListener(window, 'load', init);
-   
-  //      function init() {
-  //          // Basic options for a simple Google Map
-  //          // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
-  //          var mapOptions = {
-  //              // How zoomed in you want the map to start at (always required)
-  //              zoom: 11,
-
-  //              // The latitude and longitude to center the map (always required)
-  //              center: new google.maps.LatLng(40.6700, -73.9400), // New York
-
-  //              // How you would like to style the map. 
-  //              // This is where you would paste any style found on Snazzy Maps.
-  //              styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
-  //          };
-
-  //          // Get the HTML DOM element that will contain your map 
-  //          // We are using a div with id="map" seen below in the <body>
-  //          var mapElement = document.getElementById('map');
-
-  //          // Create the Google Map using our element and options defined above
-  //          var map = new google.maps.Map(mapElement, mapOptions);
-
-  //          // Let's also add a marker while we're at it
-  //          var marker = new google.maps.Marker({
-  //              position: new google.maps.LatLng(40.6700, -73.9400),
-  //              map: map,
-  //              title: 'Snazzy!'
-  //          });
-  //      }
 
 
 
