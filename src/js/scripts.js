@@ -148,10 +148,10 @@
       console.log(jResultsFinal);
 
       //clear default items from 
-      $("#event-listing").empty();
+      $('#event-listing').empty();
 
       var baseNumber = jResultsFinal.length / 3;
-      console.log("The base number is: " + baseNumber);
+      console.log('The base number is: ' + baseNumber);
 
       //append to DOM
       jResultsFinal.forEach(function(j) {
@@ -161,7 +161,7 @@
         console.log(j.name);
 
         //get an instance of an event and append it to the DOM..
-        $("#event-listing").append('\
+        $('#event-listing').append('\
             <div class="event-thirds" data-event-id="' + j.id + '">\
               <div>\
                 <h1>' + j.name + '</h1>\
@@ -181,13 +181,13 @@
     //import data from data/events.json
     //input into localStorage.events
     //json file will always have data, which is why this method will always work!
-    console.log("localStorage.events is empty");
-    $.getJSON("assets/data/events.json").done( function(jData) {
+    console.log('localStorage.events is empty');
+    $.getJSON('assets/data/events.json').done( function(jData) {
       console.log(jData);
       //put the jData objects into localStorage
       var sData = JSON.stringify(jData);
       localStorage.events = sData;
-      console.log("localStorage.events successfully populated");
+      console.log('localStorage.events successfully populated');
 
       var sEvents = localStorage.events;
       var jEvents = JSON.parse(sEvents);
@@ -199,7 +199,7 @@
 
           var aTopics = j.topic;
 
-          $("#event-listing").append('\
+          $('#event-listing').append('\
               <div class="event-thirds" data-event-id="' + j.id + '">\
                 <div>\
                   <h1>' + j.name + '</h1>\
@@ -228,7 +228,7 @@
 
         var aTopics = j.topic;
 
-        $("#event-listing").append('\
+        $('#event-listing').append('\
             <div class="event-thirds" data-event-id="' + j.id + '">\
               <div>\
                 <h1>' + j.name + '</h1>\
@@ -252,7 +252,7 @@
     //append all of localstorage's content to the corresponding table
     var jEvents = JSON.parse(localStorage.events);
     jEvents.forEach( function(j) {
-      $("#event-listing tbody").append('<tr data-event-id="' + j.id + '">\
+      $('#event-listing tbody').append('<tr data-event-id="' + j.id + '">\
 										<td>' + j.name + '</td>\
 										<td>' + j.topic + '</td>\
 										<td>' + j.speaker + '</td>\
@@ -269,24 +269,21 @@
 
 
 
-
-
-
   function compare(inputVal, dataVal, jObj, jData) {
     var inputValLower = inputVal.toLowerCase();
     var dataValLower = dataVal.toLowerCase();
   
-    console.log("The input value is: " + inputValLower);
-    console.log("The JSON data to compare is: " + dataValLower);
+    console.log('The input value is: ' + inputValLower);
+    console.log('The JSON data to compare is: ' + dataValLower);
   
     var bool = dataValLower.includes(inputValLower);
-    console.log("The bool = " + bool);
+    console.log('The bool = ' + bool);
   
       if (bool == true) {
-        console.log("Match made");
+        console.log('Match made');
         jData.push(jObj);
       } else {
-        console.log("False");
+        console.log('False');
       }
   }
   

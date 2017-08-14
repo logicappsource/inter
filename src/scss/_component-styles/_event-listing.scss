@@ -1,10 +1,15 @@
+
+
+/*	NOTES:
+	- This component will need a width media query and a height media query! 
+*/
 #event-listing {
 	@extend .flex-section;
 
 	min-height: calc(100vh - #{$nav-height});
 
 	.event {
-		height: calc( (100vh - #{$nav-height}) / 2 ) ;
+		// height: calc( (100vh - #{$nav-height}) / 2 ) ;
 		
 	}
 
@@ -42,7 +47,3 @@
 	
 
 }
-
-/*	NOTES:
-	- This component will need a width media query and a height media query! 
-*/

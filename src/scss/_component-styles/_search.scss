@@ -1,7 +1,9 @@
+@import '_variables.scss';
+
+
 
 #fold{
    // background-color: #343d46;
-    
     // background-image: url('http://www.innovationiseverywhere.com/wp-content/uploads/2017/04/blockchain-in-asia-2-cover.png');
     background-image: url('https://pixabay.com/get/e831b50b2cfc093ed1584d05fb0938c9bd22ffd41cb1134493f6c778ae/texture-1444488_1280.jpg');
     background-repeat: no-repeat;
@@ -38,7 +40,8 @@
         font-size: 1em;
         margin-left: $margin-s;
     }
-    @include inputcolor($gray);
+    // @include inputcolor($gray);
+   // @include inputcolor(#282526);
 
     button {
         background-color: $white;
@@ -48,7 +51,8 @@
     }
 
     button i {
-        color: $gray;
+        // color: $gray;
+        color: #282526;
         font-size: 1.5em;
     }
 }
