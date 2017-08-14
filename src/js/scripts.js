@@ -442,7 +442,7 @@
        
       // localStorage.loggedInUser = JSON.stringify(credentials);
        isLoggedIn();
-       $('.brand h1').text('Logged in as Admin ' + '# ' + credentials.username);
+       $('.brand h1').text('Welcome ' + credentials.username);
          
   
       // hideWindowsAndShowOneWindow('wdw-register-member');
@@ -549,6 +549,12 @@
     console.log('Postclicke');
   });
   
+  //Post new event from INDex
+  $('#postnewevent').on('click', function() {
+    hideWindowsAndShowOneWindow('wdw-post-event');
+    console.log('Post new event clicked ');
+  });
+
   //Remove Event
   aEvents.indexOf(this); 
   

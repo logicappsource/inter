@@ -1,4 +1,14 @@
 
+#wdw-post-event {
+@extend .flex-section;
+background-image: url('https://cdn.pixabay.com/photo/2016/03/27/21/43/sunglasses-1284392_1280.jpg');
+background-repeat: no-repeat;
+background-size: 100%; 
+}
+
+#postbtn{
+  color:white;
+}
 
 
 /* START:New tech
