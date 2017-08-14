@@ -5,13 +5,13 @@ REQUIEREMENTS DONE :
 - post new events
 - edit existing events
 - Single event location information
+ -  Manage the partners list, in a similar way as with the events”
 
 REQUEIRETEMENS MISSiNG: 
 
  -   Delete 
  -   (Get an overview of all the events) and see individual events
- -   Manage the partners list, in a similar way as with the events”
-
+ 
 
 NICE TO HAVE AFTER REQU is finish 
 

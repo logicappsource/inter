@@ -351,9 +351,38 @@
     }
   }
 
+
+//Searhc partner dynamically 
+  function searchPartners() {
+      //Declare variables 
+      var input, filter, table, tr, td, i; 
+      input = document.getElementById('myPartner');
+      filter = input.value.toUpperCase(); 
+      table = document.getElementById('myPartnerTable');
+      tr = document.getElementsByTagName('tr'); 
+
+      //Loop through all table row and hide the ones that dont match 
+
+      for(i = 0; i< tr.length; i++) {
+        td = tr[i].getElementsByTagName('td')[0]; 
+        if(td) {
+          if(td.innerHTML.toUpperCase().indexOf(filter) > -1 ) {
+            tr[i].style.display = '';
+          } else {
+            tr[i].style.display = 'none'; 
+          }
+        }
+      }
+  }
+
     //Search Through Table  Events-> 
     $('#myInput').keyup(function() {
       searchEvents();
+    });
+
+
+    $('#myPartner').keyup(function() {
+      searchPartners(); 
     });
     
   

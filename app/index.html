@@ -48,7 +48,7 @@
         
           
           
-<!--           
+            <!--           
             <li> <div class="dropdown">
                   <button class="dropbtn">Manage</button>
                   <div class="dropdown-content">
@@ -56,7 +56,6 @@
                     <a href="#">Users</a>  
                     <a href="#">Manage Members</a> 
                   </div> 
-
                 </div>  </li> -->
 
 
@@ -69,7 +68,6 @@
 
 
   <main class="main" role="main">
-
    
             <!-- wdw  Home --> 
             <div class="wdw" id="wdw-home"> 
@@ -89,7 +87,6 @@
                             <div class="box" id="box3" >  </div>
                           -->
                       <!-- </div> -->
-
                     <!-- </div>  fold-->
 
           <!-- wdw Events -->
@@ -352,11 +349,8 @@ End home-->
                           <td class="hide_on_click clickable">delete</td>
                         </tr>
                       </tbody>
-
                       <tbody id="lblEvents">
-
                       </tbody>
-
                     </table>
       </div>
 
@@ -364,6 +358,74 @@ End home-->
       <!-- wdw Partnere --> 
      <div class="wdw" id="wdw-partnere">  
       
+        <input type="text" id="myPartner" onkeyup="searchPartners()" placeholder="Search for events..">
+        <table id="myPartnerTable">
+          <tbody class="partner-back">
+          <tr class="header">
+            <th style="width:20%;">First Name</th>
+            <th style="width:20%;">Last Name</th>
+            <th style="width:20%;">Username</th>
+            <th style="width:20%;">Email</th>
+            <th style="width:20%;">Link</th>
+            <th style="width:10%;">Delete</th>
+          </tr>
+          <tr>
+            <td id="td1" contenteditable='true'>Mads</td>
+            <td id="td2" contenteditable='true'>Bjergo</td>
+            <td id="td3" contenteditable='true'>Mbjork</td>
+            <td contenteditable='true'>www.blockchain.com</td>
+            <td><i class="fa fa-user-circle-o" aria-hidden="true"></i></td>
+            <td onClick="hide()"><i  class="fa fa-trash" aria-hidden="true">5</i></td>
+          </tr>
+          <tr>
+            <td contenteditable='true'>Mogens</td>
+            <td contenteditable='true'>Lop</td>
+            <td contenteditable='true'>Loppe</td>
+            <td contenteditable='true'>www.websummit.com</td>
+            <td contenteditable='true'><i class="fa fa-user-circle-o" aria-hidden="true"> 20</i></td>
+ 
+            
+          </tr>
+          <tr>  
+            <td contenteditable='true'>lærke</td>
+            <td contenteditable='true'>Tor</td>
+            <td contenteditable='true'>thethorproject</td>
+            <td contenteditable='true'>www.thorhid.com</td>
+            <td contenteditable='true'><i class="fa fa-user-circle-o" aria-hidden="true"> 99</i></td>
+          </tr>
+          <tr>
+              <td contenteditable='true'>rever gineer </td>
+              <td contenteditable='true'>leveire</td>
+              <td contenteditable='true'>yolo17</td>
+              <td contenteditable='true'>www.hidenonion.com</td>
+              <td contenteditable='true'><i class="fa fa-user-circle-o" aria-hidden="true"> 80</i></td>
+          </tr>
+             <tr>
+                <td contenteditable='true'>sam</td>
+                <td contenteditable='true'>maoot</td>
+                <td contenteditable='true'>mojolo</td>
+                <td contenteditable='true'>www.coinbase.com</td>
+                <td contenteditable='true'><i class="fa fa-user-circle-o" aria-hidden="true">12</i></td>
+          </tr>
+             <tr>
+                <td contenteditable='true'>Dreame</td>
+                <td contenteditable='true'>sancisco</td>
+                <td contenteditable='true'>loo00l</td>
+                <td contenteditable='true'>www.p0wned.com</td>
+                <td contenteditable='true'><i class="fa fa-user-circle-o" aria-hidden="true">92</i></td>
+          </tr>
+
+          <tr>
+              <td></td>
+              <td></td>
+              <td class="hide_on_click clickable">delete</td>
+            </tr>
+          </tbody>
+          <tbody id="lblEvents">
+          </tbody>
+        </table>
+
+
     
     </div> <!-- End partner --> 
 
@@ -382,7 +444,7 @@ End home-->
                       
                          <td>www.Tekhus.com - </td>
                            <td>14 Aug</td>
-                                            
+                                   
                 </ul>
                              
                 <!-- <div id="map"></div>
@@ -398,7 +460,6 @@ End home-->
               zoom: 8
             });
           }
-    
         </script>
     
 
