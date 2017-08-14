@@ -33,9 +33,6 @@
       // FastShell
     });
   
-  
-   
-  
   //Create 
   /**********************************************************************/
   //Adds events to search -- schedule calendar 
@@ -525,7 +522,12 @@
    /**********************************************************************/
     //Event Listeners 
     /**********************************************************************/
-  
+  $('#managepartners').on('click', function() {
+      console.log('moving to partners manage ');
+      hideWindowsAndShowOneWindow('wdw-partnere');
+  });
+
+
     //Post
     $('#postbtn').on('click', function() {
       getPost(); 
