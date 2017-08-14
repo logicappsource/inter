@@ -511,11 +511,7 @@
   
   //Nav - Calendar 
   $('#linkCalendar').on('click', function() {
-    swal(
-      'Oops...',
-      'Something went wrong!',
-      'error'
-    )
+  
     hideWindowsAndShowOneWindow('wdw-calendar');
     console.log('Nav - Calendar clicked');
   });
@@ -580,8 +576,18 @@ $('#linkpartnere').on('click', function() {
     console.log('Trash delete clicked ');
   });
   
+  // //Delete hide event 
+  // $('.d1').on('click', function() {
+  //   $(this).parent.hide();
+  //   console.log('hiding this ');
+  // });
   
-  
+  // $('td.hide_on_click').live('click', function(){
+  //   // PICK ONE OF THESE:
+  //   // $(this).parent('tr').remove(); //completely destroy the tr (remove from DOM)
+  //   $(this).parent('tr').hide(); //just hide it from the user
+  // });
+
   
   })(jQuery, window, document);
   
