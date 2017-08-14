@@ -10,7 +10,13 @@
     z-index: 200;
     background-size: cover;
     background-position: center;
+    height: 300px;
+}
 
+#searchEvents {
+    left:300px;
+    color:white;
+    top:-15px;
 }
 
 #foldbackground{
@@ -23,14 +29,17 @@
     
 }
 
-#search {
+#searchfront {
     @extend .flex-container;
     background-color: $white;
     height: 42px;
     /* border: 1.5px solid $white; */
     border-radius: 30px;
     margin-left: $margin-n;
-    box-shadow: $shadow-inset;	
+   // box-shadow: $shadow-inset;
+    width: 150%;	
+    position: absolute;
+    left: 500px;
 
     input {
         background-color: $white;

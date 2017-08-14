@@ -300,6 +300,7 @@
   $(document).ready(function() {
      hideWindowsAndShowOneWindow('wdw-home'); 
      $('#wdw-event-listing').fadeIn(500);
+    //  $('.dropdown').hide();
   });
   
   
@@ -457,6 +458,7 @@
         hideWindowsAndShowOneWindow('wdw-index');
   
         console.log(credentialsMember.username + credentialsMember.password);
+     
         
         // $('.brand h1').text('Logged in as Member' + ' # ' + credentialsMember.username);
     } else {
@@ -577,8 +579,9 @@
   });
 
   // Manage members 
-  $('#manage-members').on('click', function() {
-    hideWindowsAndShowOneWindow('wdw-manage-members'); 
+  $('#registermember').on('click', function() {
+    // hideWindowsAndShowOneWindow('wdw-manage-members'); 
+    hideWindowsAndShowOneWindow('wdw-index'); 
     console.log('manage-members clicked');
   });
 
