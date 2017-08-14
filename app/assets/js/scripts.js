@@ -299,7 +299,6 @@
     $('#linkLogout').fadeIn(500);
      //}
   }
-  
 
   
   function searchEventsHome() {
@@ -320,7 +319,7 @@
       if(location) {
         if (location.innerHTML.toUpperCase().indexOf(filter) > -1) {
           figcap[i].style.display = '';
-          console.log(figcap[i]);
+          console.log (figcap[i]);
         } else {
           figcap[i].style.display = 'none';
           console.log(figcap[i]);
@@ -333,7 +332,11 @@
   $('#searchfront').keyup(function() {
     searchEventsHome();
   });
-  
+
+  ///------------------------------------//
+
+
+
   //Serach Events Dynamicialy 
   function searchEvents() {
     // Declare variables 
@@ -345,7 +348,6 @@
   
     // Loop through all table rows, and hide those who don't match the search query
     for (i = 0; i < tr.length; i++) {
-     
       td = tr[i].getElementsByTagName('td')[0];
       if (td) {
         if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -357,42 +359,11 @@
     }
   }
 
- //Serach Partnere Dynamicialy 
-//  function myFunction() {
-//   // Declare variables 
-//   var input, filter, table, tr, td, i;
-//   input = document.getElementById("myInput");
-//   filter = input.value.toUpperCase();
-//   table = document.getElementById("myTable");
-//   tr = table.getElementsByTagName("tr");
-
-//   // Loop through all table rows, and hide those who don't match the search query
-//   for (i = 0; i < tr.length; i++) {
-//     td = tr[i].getElementsByTagName("td")[0];
-//     if (td) {
-//       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-//         tr[i].style.display = "";
-//       } else {
-//         tr[i].style.display = "none";
-//       }
-//     } 
-//   }
-// }
-
-  
-  
     //Search Through Table  Events-> 
     $('#myInput').keyup(function() {
       searchEvents();
     });
     
-    // //Search Through Table Partnere -> 
-    // $('#myInput').keyup(function() {
-    //   myFunction();
-    // });
-
-  
-  
   
   function getPost() {
     var sImageUrl = $('#inputpostimg').val();
@@ -447,11 +418,11 @@
   $('#loginbtn').on('click', function() {
     var credentials = JSON.parse(localStorage.getItem('credentials')); 
     var credentialsMember = JSON.parse(localStorage.getItem('credentialsMember')); 
-  
     var usernameInput = $('#inputusername').val();
+    var password = $('#inputpassword').val();
   
     if(credentials.username === usernameInput && credentials.password === password || credentialsMember.username === usernameInput && credentialsMember.password === password ) {
-      //  console.log('Welcome Mr.   ' + credentials.username);
+       console.log('Welcome Mr.   ' + credentials.username);
     
        isLoggedIn();
        $('.brand h1').text('HI ' + credentials.username);
